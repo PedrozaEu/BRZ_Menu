@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cardápio - Brazzêro Espetinhos</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <h1>Brazzêro Espetinhos</h1>
+  </header>
+  <main>
+    <section id="combos"><h2>Combos</h2><div class="card-container" id="combo-cards"></div></section>
+    <section id="comidas"><h2>Comidas</h2><div class="card-container" id="comida-cards"></div></section>
+    <section id="bebidas"><h2>Bebidas</h2><div class="card-container" id="bebida-cards"></div></section>
+
+    <button id="gerar-pedido">Gerar Pedido</button>
+
+    <div id="resumo-modal" class="modal">
+      <div class="modal-content">
+        <span id="close-modal" class="close">&times;</span>
+        <h2>Resumo do Pedido</h2>
+        <div id="resumo-pedido"></div>
+        <label>Selecione a Mesa:</label>
+        <select id="mesa">
+          <option value="">---</option>
+          <option value="01">Mesa 01</option>
+          <option value="02">Mesa 02</option>
+          <option value="03">Mesa 03</option>
+          <option value="04">Mesa 04</option>
+          <option value="05">Mesa 05</option>
+          <option value="06">Mesa 06</option>
+          <option value="07">Mesa 07</option>
+          <option value="08">Mesa 08</option>
+          <option value="09">Mesa 09</option>
+        </select>
+        <textarea id="observacoes" placeholder="Alguma observação?"></textarea>
+        <div class="pix-box">
+          <h3>Pagamento via PIX</h3>
+          <img id="qrcode-pix" src="" alt="QR Code PIX"/>
+          <textarea id="codigo-pix" readonly></textarea>
+          <button onclick="copiarPix()">Copiar Código PIX</button>
+        </div>
+        <div class="modal-actions">
+          <button onclick="fecharModal()">Revisar</button>
+          <button onclick="confirmarPedido()">Confirmar Pedido</button>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="js/menu.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
